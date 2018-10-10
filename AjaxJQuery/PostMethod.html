@@ -1,0 +1,35 @@
+<html>
+    <head>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <!-- Latest compiled and minified CSS -->
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+         
+    </head>
+
+    <body>
+        <div class="container">
+            <p id="changehere"> This line going to be changed...</p>
+            <button class="btn btn-primary  btnclick">Click it Ok</button>
+
+        </div>
+        <script>
+          $(document).ready(function()
+          {
+            $(".btnclick").click(function()
+            {
+               $.post("post.html",{
+                   "name" : "Krishna",
+                   "lastName" : "Dubey"
+               },function(data,status)
+               {
+                 $("#changehere").html(data);
+                 alert(status);
+               });
+                 
+            }) ;
+          });
+          localStorage.setItem("names",name);
+          localStorage.setItem("lastname",lastName);
+        </script>
+    </body>
+</html>
